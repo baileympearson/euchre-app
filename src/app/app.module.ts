@@ -8,6 +8,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HandViewContainerComponent } from './shared/components/hand-view-container/hand-view-container.component';
 import { SharedModule } from './shared/shared.module';
+import { LandingPageModule } from './landing-page/landing-page.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { SharedModule } from './shared/shared.module';
     BrowserModule,
     AppRoutingModule,
     MatDialogModule,
+    LandingPageModule,
     SharedModule,
     BrowserAnimationsModule
   ],
