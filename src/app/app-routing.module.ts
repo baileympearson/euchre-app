@@ -6,7 +6,7 @@ import { LandingPageComponent } from './landing-page/landing-page/landing-page.c
 
 const routes: Routes = [
   {
-    path: '', component: LandingPageComponent 
+    path: '', component: LandingPageComponent,
   },
   // {
   //   path: 'createGame', component: CreateGameComponent

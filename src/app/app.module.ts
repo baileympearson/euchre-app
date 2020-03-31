@@ -9,6 +9,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HandViewContainerComponent } from './shared/components/hand-view-container/hand-view-container.component';
 import { SharedModule } from './shared/shared.module';
 import { LandingPageModule } from './landing-page/landing-page.module';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+import { appReducer } from './state/reducers';
+import { AppReducers } from './state/state';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,9 @@ import { LandingPageModule } from './landing-page/landing-page.module';
     MatDialogModule,
     LandingPageModule,
     SharedModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    StoreModule.forRoot(AppReducers),
+    StoreDevtoolsModule.instrument({ maxAge: 50, logOnly: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
