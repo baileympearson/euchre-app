@@ -15,6 +15,9 @@ import { environment } from '../environments/environment';
 import { AppReducers } from './state/state';
 import { AppEffects } from './state/effects';
 import { EffectsModule } from '@ngrx/effects';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { ToolbarModule } from './toolbar/toolbar.module';
+import { CreateGameModule } from './create-game/create-game.module';
 
 @NgModule({
   declarations: [
@@ -27,11 +30,14 @@ import { EffectsModule } from '@ngrx/effects';
     AppRoutingModule,
     MatDialogModule,
     LandingPageModule,
+    ToolbarModule,
+    CreateGameModule,
     SharedModule,
     BrowserAnimationsModule,
     StoreModule.forRoot(AppReducers),
     StoreDevtoolsModule.instrument({ maxAge: 50, logOnly: environment.production }),
-    EffectsModule.forRoot([AppEffects])
+    EffectsModule.forRoot([AppEffects]),
+    StoreRouterConnectingModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,6 +8,7 @@ import { CreateGameComponent } from './create-game/create-game.component';
   declarations: [CreateGameComponent],
   imports: [
     CommonModule
-  ]
+  ],
+  exports: [CreateGameComponent]
 })
 export class CreateGameModule { }
