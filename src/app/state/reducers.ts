@@ -12,10 +12,6 @@ const initialState: StoreState = {
 
 const reducer = createReducer(
     initialState,
-    on(appLoaded, (state: StoreState) => {
-        console.log('reducing');
-        return { ...state, gameName: 'hello world' }
-    })
 );
 
 export function appReducer(state: StoreState | undefined, action: Action) {

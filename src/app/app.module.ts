@@ -12,8 +12,9 @@ import { LandingPageModule } from './landing-page/landing-page.module';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
-import { appReducer } from './state/reducers';
 import { AppReducers } from './state/state';
+import { AppEffects } from './state/effects';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AppReducers } from './state/state';
     SharedModule,
     BrowserAnimationsModule,
     StoreModule.forRoot(AppReducers),
-    StoreDevtoolsModule.instrument({ maxAge: 50, logOnly: environment.production })
+    StoreDevtoolsModule.instrument({ maxAge: 50, logOnly: environment.production }),
+    EffectsModule.forRoot([AppEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]
