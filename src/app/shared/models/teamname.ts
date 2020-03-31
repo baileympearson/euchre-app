@@ -1,0 +1,2 @@
+
+export type TeamName = string;
