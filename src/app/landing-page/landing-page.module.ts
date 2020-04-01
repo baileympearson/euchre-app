@@ -4,12 +4,16 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { LoginComponentComponent } from './login-component/login-component.component';
 import { RegisterComponentComponent } from './register-component/register-component.component';
 
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 @NgModule({
   declarations: [LandingPageComponent, LoginComponentComponent, RegisterComponentComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    MatInputModule,
+    MatFormFieldModule
   ]
 })
 export class LandingPageModule { }
