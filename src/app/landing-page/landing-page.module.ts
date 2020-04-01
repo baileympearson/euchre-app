@@ -6,6 +6,7 @@ import { RegisterComponentComponent } from './register-component/register-compon
 
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
   imports: [
     CommonModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatButtonModule
   ]
 })
 export class LandingPageModule { }

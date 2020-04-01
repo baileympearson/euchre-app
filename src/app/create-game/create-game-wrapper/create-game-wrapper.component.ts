@@ -13,4 +13,12 @@ export class CreateGameWrapperComponent {
   toggleState() {
     this.gameWrapperState = this.gameWrapperState === 'create game' ? 'join game' : 'create game';
   }
+
+  isJoinGameScreen() {
+    return this.gameWrapperState === 'join game';
+  }
+
+  isCreateGameScreen() {
+    return this.gameWrapperState === 'create game';
+  }
 }

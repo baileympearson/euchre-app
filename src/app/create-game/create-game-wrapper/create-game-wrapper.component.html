@@ -1,20 +1,41 @@
 <div class="landing-page-center">
   <div class="landing-page-container">
-    <div>Welcome Joe!</div>
-    <form class="example">
-      <mat-form-field>
-        <mat-label> Game name </mat-label>
-        <input matInput type="text" />
-      </mat-form-field>
+    <div *ngIf="isJoinGameScreen()">
+      <div>Join An Existing Game</div>
+      <form class="example">
+        <mat-form-field>
+          <mat-label> Game name </mat-label>
+          <input matInput type="text" />
+        </mat-form-field>
 
-      <button mat-flat-button color="primary" *ngIf="gameWrapperState === 'create game'">Create Game</button>
-      <button mat-flat-button color="primary" *ngIf="gameWrapperState === 'join game'">Join Game</button>
-    </form>
+        <button mat-flat-button color="primary">Join Game</button>
+      </form>
 
-    <span>
-      <span> Want to </span>
-      <button (click)="toggleState()" class="link-button">join a game</button>
-      <span> instead? </span>
-    </span>
+      <span>
+        <span> Want to </span>
+        <button (click)="toggleState()" class="link-button">
+          create a game
+        </button>
+        <span> instead? </span>
+      </span>
+    </div>
+
+    <div *ngIf="isCreateGameScreen()">
+      <div>Start New Game</div>
+      <form class="example">
+        <mat-form-field>
+          <mat-label> Game name </mat-label>
+          <input matInput type="text" />
+        </mat-form-field>
+
+        <button mat-flat-button color="primary">Create Game</button>
+      </form>
+
+      <span *ngIf="!isJoinGameScreen()">
+        <span> Want to </span>
+        <button (click)="toggleState()" class="link-button">join a game</button>
+        <span> instead? </span>
+      </span>
+    </div>
   </div>
 </div>
