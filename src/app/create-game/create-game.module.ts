@@ -1,14 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CreateGameComponent } from './create-game/create-game.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { CreateGameWrapperComponent } from './create-game-wrapper/create-game-wrapper.component';
 
 
 
 @NgModule({
-  declarations: [CreateGameComponent],
+  declarations: [CreateGameWrapperComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule
   ],
-  exports: [CreateGameComponent]
+  exports: [CreateGameWrapperComponent]
 })
 export class CreateGameModule { }

@@ -18,6 +18,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { ToolbarModule } from './toolbar/toolbar.module';
 import { CreateGameModule } from './create-game/create-game.module';
+import { GameSetupModule } from './game-setup/game-setup.module';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { CreateGameModule } from './create-game/create-game.module';
     LandingPageModule,
     ToolbarModule,
     CreateGameModule,
+    GameSetupModule,
     SharedModule,
     BrowserAnimationsModule,
     StoreModule.forRoot(AppReducers),
