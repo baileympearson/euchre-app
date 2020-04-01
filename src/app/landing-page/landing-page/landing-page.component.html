@@ -1,1 +1,17 @@
-<p>landing-page works!</p>
+<div class="landing-page-container" *ngIf="landingPageState === 'login'">
+  <app-login-component> </app-login-component>
+  <span>
+    <span> Don't have an account? Click </span>
+    <button (click)="toggleState()" class="link-button">here</button>
+    <span> to register! </span>
+  </span>
+</div>
+
+<div class="landing-page-container" *ngIf="landingPageState === 'register'">
+  <app-register-component> </app-register-component>
+  <span>
+    <span> Already have an account? Click </span>
+    <button (click)="toggleState()" class="link-button">here</button>
+    <span> to login! </span>
+  </span>
+</div>
