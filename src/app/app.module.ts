@@ -3,10 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AcceptTrumpComponent } from './shared/components/accept-trump/accept-trump.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HandViewContainerComponent } from './shared/components/hand-view-container/hand-view-container.component';
 import { SharedModule } from './shared/shared.module';
 import { LandingPageModule } from './landing-page/landing-page.module';
 import { StoreModule } from '@ngrx/store';
@@ -19,12 +17,11 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { ToolbarModule } from './toolbar/toolbar.module';
 import { CreateGameModule } from './create-game/create-game.module';
 import { GameSetupModule } from './game-setup/game-setup.module';
+import { GameModule } from './game/game.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AcceptTrumpComponent,
-    HandViewContainerComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +32,7 @@ import { GameSetupModule } from './game-setup/game-setup.module';
     CreateGameModule,
     GameSetupModule,
     SharedModule,
+    GameModule,
     BrowserAnimationsModule,
     StoreModule.forRoot(AppReducers),
     StoreDevtoolsModule.instrument({ maxAge: 50, logOnly: environment.production }),

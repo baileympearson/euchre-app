@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LandingPageComponent } from './landing-page/landing-page/landing-page.component';
 import { GameSetupComponent } from './game-setup/game-setup/game-setup.component';
 import { CreateGameWrapperComponent } from './create-game/create-game-wrapper/create-game-wrapper.component';
+import { GameComponent } from './game/game/game.component';
 
 
 const routes: Routes = [
@@ -13,11 +14,11 @@ const routes: Routes = [
     path: 'creategame', component: CreateGameWrapperComponent
   },
   {
-    path: 'gameSetup/:gameName', component: GameSetupComponent
+    path: 'setupgame/:gameName', component: GameSetupComponent
   },
-  // {
-  //   path: 'game/:gameName', component: GameComponent
-  // }
+  {
+    path: 'game/:gameName', component: GameComponent
+  },
   {
     path: '**', redirectTo: ''
   }
