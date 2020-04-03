@@ -18,6 +18,7 @@ import { ToolbarModule } from './toolbar/toolbar.module';
 import { CreateGameModule } from './create-game/create-game.module';
 import { GameSetupModule } from './game-setup/game-setup.module';
 import { GameModule } from './game/game.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { GameModule } from './game/game.module';
     GameSetupModule,
     SharedModule,
     GameModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     StoreModule.forRoot(AppReducers),
     StoreDevtoolsModule.instrument({ maxAge: 50, logOnly: environment.production }),
