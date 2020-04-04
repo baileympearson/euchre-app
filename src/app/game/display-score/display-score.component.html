@@ -1,0 +1,30 @@
+<div class="score-display-container">
+  <div class='trick-score trick-score-left'>
+    <mat-icon
+      *ngFor="let scoreStatus of teamATricks | async"
+      svgIcon="{{ scoreStatus }}"
+      color="primary"
+      class="trick-score-icon"
+    ></mat-icon>
+  </div>
+  <div class="flex-row score-container">
+    <div class="player-name">
+      <span> {{ (teamAPlayers | async).player1 | titlecase }} </span>
+      <span> {{ (teamAPlayers | async).player2 | titlecase }} </span>
+    </div>
+    <div class="game-scores">
+      {{ teamAScore | async }} | {{ teamBScore | async }}
+    </div>
+    <div class="player-name">
+      <span> {{ (teamBPlayers | async).player1 | titlecase }} </span>
+      <span> {{ (teamBPlayers | async).player2 | titlecase }} </span>
+    </div>
+  </div>
+  <span class='trick-score trick-score-right'>
+    <mat-icon
+      *ngFor="let scoreStatus of teamBTricks | async"
+      svgIcon="{{ scoreStatus }}"
+      class="trick-score-icon"
+    ></mat-icon>
+  </span>
+</div>

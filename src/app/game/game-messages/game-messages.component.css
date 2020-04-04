@@ -1,0 +1,11 @@
+.game-messages {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    height: 48px;
+    color: white;
+    font-size: 48px;
+    margin: 24px;
+}

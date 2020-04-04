@@ -19,6 +19,7 @@ import { CreateGameModule } from './create-game/create-game.module';
 import { GameSetupModule } from './game-setup/game-setup.module';
 import { GameModule } from './game/game.module';
 import { HttpClientModule } from '@angular/common/http';
+import { appReducer } from './state/reducers';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { HttpClientModule } from '@angular/common/http';
     GameModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    StoreModule.forRoot(AppReducers),
+    StoreModule.forRoot({ appState: appReducer }),
     StoreDevtoolsModule.instrument({ maxAge: 50, logOnly: environment.production }),
     EffectsModule.forRoot([AppEffects]),
     StoreRouterConnectingModule.forRoot()

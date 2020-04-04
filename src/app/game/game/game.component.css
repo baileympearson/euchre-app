@@ -1,0 +1,11 @@
+.settings {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+}
+
+.bottom-right {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+}

@@ -10,8 +10,14 @@ export interface StoreState {
     players: Player[];
     score: Score;
     teams: {
-        teamA: string;
-        teamB: string;
+        teamA: {
+          player1: Player,
+          player2: Player
+        };
+        teamB: {
+          player1: Player,
+          player2: Player
+        };
     },
     gameStatus: GameStatus,
     handData: {
@@ -30,16 +36,22 @@ const initialState: StoreState = {
     score: {
       game: {
         teamA: 3,
-        teamB: 5
+        teamB: 10
       },
       hand: {
-        teamA: 0,
-        teamB: 0
+        teamA: 3,
+        teamB: 2
       }
     },
     teams: {
-        teamA: 'bog',
-        teamB: 'jeith'
+        teamA: {
+          player1: 'bailey',
+          player2: 'keaton',
+        },
+        teamB: {
+          player1: 'joe',
+          player2: 'nate',
+        }
     },
     gameStatus: 'player dealing',
     handData: {

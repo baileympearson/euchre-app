@@ -1,0 +1,56 @@
+.score-display-container {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.trick-score-icon {
+    width: 48px;
+    height: 48px;
+}
+
+.score-container {
+    background: white;
+    border-radius: 8px;
+    padding: 16px;
+    width: 496px;
+}
+
+.team-score-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.game-scores {
+    font-size: 24px;
+}
+
+.trick-score {
+    border: 1px solid lightgray;
+    align-items: center;
+    display: flex;
+    padding: 8px;
+    background: white;
+}
+
+.trick-score-left {
+    border-radius: 0 8px 8px 0;
+}
+
+.trick-score-right {
+    border-radius: 8px 0 0 8px;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.player-name {
+    display: flex;
+    flex-direction: column;
+}
