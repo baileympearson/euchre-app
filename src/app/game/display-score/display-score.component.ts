@@ -17,11 +17,11 @@ import { pluck, mergeMap, map } from 'rxjs/operators';
   styleUrls: ['./display-score.component.css'],
 })
 export class DisplayScoreComponent {
-  teamATricks = this._store
+  teamBTricks = this._store
     .select(selectHandScore)
-    .pipe(pluck('teamA'), scoreToDisplay);
-  teamBTricks = this._store.select(selectHandScore).pipe(
-    pluck('teamB'),
+    .pipe(pluck('teamB'), scoreToDisplay);
+  teamATricks = this._store.select(selectHandScore).pipe(
+    pluck('teamA'),
     scoreToDisplay,
     map((value) => [...value].reverse())
   );
@@ -49,5 +49,9 @@ export class DisplayScoreComponent {
         'assets/icons/empty-circle-24px.svg'
       )
     );
+  }
+
+  getColor(scoreStatus: 'filled' | 'empty'): 'primary' | 'secondary' {
+    return scoreStatus === 'filled' ? 'primary' : 'secondary';
   }
 }

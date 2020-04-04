@@ -3,7 +3,7 @@
     <mat-icon
       *ngFor="let scoreStatus of teamATricks | async"
       svgIcon="{{ scoreStatus }}"
-      color="primary"
+      color="{{ getColor(scoreStatus) }}"
       class="trick-score-icon"
     ></mat-icon>
   </div>
@@ -24,6 +24,7 @@
     <mat-icon
       *ngFor="let scoreStatus of teamBTricks | async"
       svgIcon="{{ scoreStatus }}"
+      color="{{ getColor(scoreStatus) }}"
       class="trick-score-icon"
     ></mat-icon>
   </span>
