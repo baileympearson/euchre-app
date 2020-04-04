@@ -1,0 +1,40 @@
+<div class="game-structure">
+    <div>
+  <div class="rotate-upside-down center-cards">
+    <div class="game-hand-viewer">
+      <app-hand-view-container [showFaceDown]="true" [cards]="cards">
+      </app-hand-view-container>
+    </div>
+  </div>
+      <div class="flex-row">
+        <span class="player-name"> Keaton </span>
+      </div>
+    </div>
+
+  <div class="game-center-row">
+    <div class="rotate-left center-cards">
+      <div class="game-hand-viewer">
+        <app-hand-view-container [cards]="cards" [showFaceDown]="true">
+        </app-hand-view-container>
+      </div>
+    </div>
+    <div class="rotate-right center-cards">
+      <div class="game-hand-viewer">
+        <app-hand-view-container [cards]="cards" [showFaceDown]="true">
+        </app-hand-view-container>
+      </div>
+    </div>
+  </div>
+
+  <div class="center-cards">
+    <div>
+      <div class="flex-row">
+        <span class="player-name"> Bailey (Dealer) </span>
+      </div>
+      <div class="game-hand-viewer on-top">
+        <app-select-card *ngIf="isCurrentPlayersTurn | async" [cards]="cards"> </app-select-card>
+        <app-hand-view-container *ngIf="!(isCurrentPlayersTurn | async)" [cards]="cards"> </app-hand-view-container>
+      </div>
+    </div>
+  </div>
+</div>

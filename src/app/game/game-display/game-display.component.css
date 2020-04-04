@@ -1,0 +1,62 @@
+.rotate-upside-down {
+    -webkit-transform: rotate(180deg); /* Safari and Chrome */
+    -moz-transform: rotate(180deg);   /* Firefox */
+    -ms-transform: rotate(180deg);   /* IE 9 */
+    -o-transform: rotate(180deg);   /* Opera */
+    transform: rotate(180deg);
+}
+
+.rotate-right {
+    -webkit-transform: rotate(90deg); /* Safari and Chrome */
+    -moz-transform: rotate(90deg);   /* Firefox */
+    -ms-transform: rotate(90deg);   /* IE 9 */
+    -o-transform: rotate(90deg);   /* Opera */
+    transform: rotate(90deg);
+}
+
+.rotate-left {
+    -webkit-transform: rotate(270deg); /* Safari and Chrome */
+    -moz-transform: rotate(270deg);   /* Firefox */
+    -ms-transform: rotate(270deg);   /* IE 9 */
+    -o-transform: rotate(270deg);   /* Opera */
+    transform: rotate(270deg);
+}
+
+.center-cards {
+    display: flex;
+    justify-content: center;
+}
+
+.game-hand-viewer {
+    width: 500px;
+    display: flex;
+    justify-content: center;
+}
+
+.game-center-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 400px;
+}
+
+.game-structure {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.player-name {
+    color: white;
+    font-size: 20px;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.on-top {
+    z-index: 1000000;
+}

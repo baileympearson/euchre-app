@@ -20,12 +20,12 @@ export const selectScore = createSelector(
 export const selectHandScore = createSelector(
     selectScore,
     (state) => state.hand
-)
+);
 
 export const selectGameScore = createSelector(
     selectScore,
     (state) => state.game
-)
+);
 
 export const selectTeamPlayers = createSelector(
     selectActiveGameState,
@@ -35,4 +35,37 @@ export const selectTeamPlayers = createSelector(
 export const selectGameName = createSelector(
     selectActiveGameState,
     state => state.gameName
+);
+
+export const selectUser = createSelector(
+    selectAppState,
+    state => state.user
+);
+
+export const selectCurrentDealer = createSelector(
+    selectActiveGameState,
+    state => state.handData.currentDealer
+);
+
+export const selectTopOfKitty = createSelector(
+    selectActiveGameState,
+    state => {
+        const kitty = state.handData.kitty;
+        if (kitty.length === 0) {
+            return [];
+        }
+        const ret = [kitty[0]];
+        console.log(ret);
+        return ret;
+    }
+)
+
+export const selectUserAction = createSelector(
+    selectActiveGameState,
+    state => state.userAction
+)
+
+export const selectElevateCards = createSelector(
+    selectActiveGameState,
+    state => state.gameMetaData.elevateCards
 );

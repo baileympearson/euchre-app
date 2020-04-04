@@ -1,0 +1,10 @@
+<div class="card-hand-container">
+  <img
+    *ngFor="let card of cardsToDisplay | async; let i=index"
+    class="card-hand-container-card"
+    src="{{ card }}"
+
+    [ngClass]="{ 'show-with-dialog' : (elevateCards | async)}"
+    (click)="onSelectCard(i)"
+  />
+</div>

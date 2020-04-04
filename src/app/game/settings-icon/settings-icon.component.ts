@@ -1,24 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
+import { GameDialogsService } from '../game-dialogs/game-dialog.service';
 
 @Component({
   selector: 'app-settings-icon',
   templateUrl: './settings-icon.component.html',
-  styleUrls: ['./settings-icon.component.css']
+  styleUrls: ['./settings-icon.component.css'],
 })
 export class SettingsIconComponent {
-
-  constructor(private _iconRegistry: MatIconRegistry, private _sanitizer: DomSanitizer) {
-this._iconRegistry.addSvgIcon(
+  constructor(
+    private _iconRegistry: MatIconRegistry,
+    private _sanitizer: DomSanitizer,
+    private _gameDialogService: GameDialogsService
+  ) {
+    this._iconRegistry.addSvgIcon(
       'settings-icon',
       this._sanitizer.bypassSecurityTrustResourceUrl(
         'assets/icons/settings-24px.svg'
       )
     );
-   }
+  }
 
-   launchSettingsDialog() {
-     alert('settings dialog is launched');
-   }
+  launchSettingsDialog() {
+    this._gameDialogService.openAcceptTrumpDialog();
+  }
 }

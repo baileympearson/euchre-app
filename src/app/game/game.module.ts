@@ -6,13 +6,20 @@ import { MatIconModule } from '@angular/material/icon';
 import { GameMessagesComponent } from './game-messages/game-messages.component';
 import { SettingsIconComponent } from './settings-icon/settings-icon.component';
 import { RoomNameLabelComponent } from './room-name-label/room-name-label.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { GameDialogsModule } from './game-dialogs/game-dialogs.module';
+import { GameDisplayComponent } from './game-display/game-display.component';
+import { SharedComponentsModule } from '../shared/components/shared-components.module';
 
 
 @NgModule({
-  declarations: [GameComponent, DisplayScoreComponent, GameMessagesComponent, SettingsIconComponent, RoomNameLabelComponent],
+  declarations: [GameComponent, DisplayScoreComponent, GameMessagesComponent, SettingsIconComponent, RoomNameLabelComponent, GameDisplayComponent],
   imports: [
     CommonModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule,
+    GameDialogsModule,
+    SharedComponentsModule
   ],
   exports: [ GameComponent ]
 })

@@ -1,9 +1,8 @@
-<!-- <div *ngIf="!showFaceDown" class="card-hand-container">
+<div *ngIf="!showFaceDown" class="card-hand-container">
   <img
-    *ngFor="let card of cards | async"
+    *ngFor="let card of cardsToDisplay | async"
     class="card-hand-container-card"
-    src="{{ card | cardToAsset }}"
-    alt="{{ card | cardToCardName }}"
+    src="{{ card }}"
   />
 </div>
 
@@ -13,6 +12,4 @@
     class="card-hand-container-card"
     src="assets/cards/face_down.jpg"
   />
-</div> -->
-
-<div> Hand View Container </div>
+</div>
