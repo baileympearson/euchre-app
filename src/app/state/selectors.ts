@@ -54,11 +54,9 @@ export const selectTopOfKitty = createSelector(
         if (kitty.length === 0) {
             return [];
         }
-        const ret = [kitty[0]];
-        console.log(ret);
-        return ret;
+        return [kitty[0]];
     }
-)
+);
 
 export const selectUserAction = createSelector(
     selectActiveGameState,
@@ -69,3 +67,14 @@ export const selectElevateCards = createSelector(
     selectActiveGameState,
     state => state.gameMetaData.elevateCards
 );
+
+export const selectActivePlayer = createSelector(
+    selectActiveGameState,
+    state => state.handData.activePlayer
+);
+
+export const selectIsCurrentPlayerActive = createSelector(
+    selectUser,
+    selectActivePlayer,
+    (user, activePlayer) => user.toLowerCase() === activePlayer.toLowerCase()
+)

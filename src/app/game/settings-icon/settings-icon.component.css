@@ -1,6 +1,14 @@
 mat-icon {
     width: 56px;
     height: 56px;
-    padding: 16px;
+    margin: 16px;
     cursor: pointer;
+    fill: white;
 }
+
+mat-icon:hover {
+    width: 64px;
+    height: 64px;
+}
+
+/* .white */

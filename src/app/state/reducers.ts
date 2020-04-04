@@ -3,7 +3,6 @@ import { Score } from "../shared/models/score";
 import { GameStatus } from "../shared/models/game-status";
 import { Card } from "../shared/models/card";
 import { Player } from "../shared/models/player";
-import { NoopAnimationPlayer } from "@angular/animations";
 import { toggleElevateCards } from "./actions";
 
 export interface StoreState {
@@ -29,6 +28,7 @@ export interface StoreState {
       kittyFaceUp: boolean;
       teamChoseTrump: "teamA" | "teamB";
       currentDealer: Player;
+      activePlayer: Player;
     };
     gameMetaData: {
       elevateCards: boolean;
@@ -67,7 +67,8 @@ const initialState: StoreState = {
       kitty: [{ value: "9", suit: "clubs" }],
       kittyFaceUp: true,
       teamChoseTrump: "teamA",
-      currentDealer: "bailey",
+      currentDealer: "keaton",
+      activePlayer: 'keaton'
     },
     gameMetaData: {
       elevateCards: false,

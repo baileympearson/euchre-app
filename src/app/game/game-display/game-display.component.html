@@ -7,7 +7,9 @@
     </div>
   </div>
       <div class="flex-row">
-        <span class="player-name"> Keaton </span>
+        <span class="player-name"> 
+          {{ formatPlayerName('keaton') | async | titlecase}}
+        </span>
       </div>
     </div>
 
@@ -29,7 +31,9 @@
   <div class="center-cards">
     <div>
       <div class="flex-row">
-        <span class="player-name"> Bailey (Dealer) </span>
+        <span class="player-name"> 
+          {{ formatPlayerName('bailey') | async | titlecase }}
+        </span>
       </div>
       <div class="game-hand-viewer on-top">
         <app-select-card *ngIf="isCurrentPlayersTurn | async" [cards]="cards"> </app-select-card>
