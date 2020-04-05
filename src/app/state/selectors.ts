@@ -78,3 +78,8 @@ export const selectIsCurrentPlayerActive = createSelector(
     selectActivePlayer,
     (user, activePlayer) => user.toLowerCase() === activePlayer.toLowerCase()
 )
+
+export const selectTrumpSuit = createSelector(
+    selectActiveGameState,
+    state => state.handData.trumpSuit
+)

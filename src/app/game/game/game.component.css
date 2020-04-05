@@ -9,3 +9,9 @@
     bottom: 0px;
     right: 0px;
 }
+
+.messages-trump-indicator {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 16px;
+}

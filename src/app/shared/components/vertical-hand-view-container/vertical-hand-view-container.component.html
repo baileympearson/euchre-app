@@ -1,0 +1,8 @@
+<!-- <div class="card-hand-container rotate-90-degrees"> -->
+<div class="card-hand-container">
+  <img
+    *ngFor="let card of cards | async"
+    class="card-hand-container-card"
+    src="assets/cards/face_down.jpg"
+  />
+</div>

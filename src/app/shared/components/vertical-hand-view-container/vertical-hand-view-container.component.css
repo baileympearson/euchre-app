@@ -1,0 +1,19 @@
+.card-hand-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 80px;
+}
+
+.card-hand-container-card {
+    width: 80px;
+    padding: 4px;
+}
+
+.rotate-90-degrees {
+    -webkit-transform: rotate(90deg); /* Safari and Chrome */
+    -moz-transform: rotate(90deg);   /* Firefox */
+    -ms-transform: rotate(90deg);   /* IE 9 */
+    -o-transform: rotate(90deg);   /* Opera */
+    transform: rotate(90deg);
+}

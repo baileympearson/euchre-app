@@ -1,0 +1,25 @@
+<div class="flex-column trump-indicator-container">
+  <div id="trump-suit-label">Trump Suit</div>
+  <div class="suits-svgs-container">
+    <mat-icon
+      svgIcon="hearts-icon"
+      class="icon"
+      [ngClass]="{ 'selected-trump-suit': isSelectedTrumpSuit('hearts') | async }"
+    ></mat-icon>
+    <mat-icon
+      svgIcon="spades-icon"
+      class="icon"
+      [ngClass]="{ 'selected-trump-suit': isSelectedTrumpSuit('spades') | async }"
+    ></mat-icon>
+    <mat-icon
+      svgIcon="diamonds-icon"
+      class="icon"
+      [ngClass]="{ 'selected-trump-suit': isSelectedTrumpSuit('diamonds') | async }"
+    ></mat-icon>
+    <mat-icon
+      svgIcon="clubs-icon"
+      class="icon"
+      [ngClass]="{ 'selected-trump-suit': isSelectedTrumpSuit('clubs') | async }"
+    ></mat-icon>
+  </div>
+</div>

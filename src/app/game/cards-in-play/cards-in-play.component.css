@@ -1,0 +1,22 @@
+.card-hand-container-card {
+    width: 80px;
+    height: auto;
+    padding: 4px;
+}
+
+.flex-row {
+    display: flex;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.middle-row {
+    justify-content: space-around;
+}
+
+.top-or-bottom-row {
+    justify-content: center;
+}

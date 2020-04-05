@@ -10,10 +10,13 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { GameDialogsModule } from './game-dialogs/game-dialogs.module';
 import { GameDisplayComponent } from './game-display/game-display.component';
 import { SharedComponentsModule } from '../shared/components/shared-components.module';
+import { KittyComponent } from './kitty/kitty.component';
+import { CardsInPlayComponent } from './cards-in-play/cards-in-play.component';
+import { TrumpIndicatorComponent } from './trump-indicator/trump-indicator.component';
 
 
 @NgModule({
-  declarations: [GameComponent, DisplayScoreComponent, GameMessagesComponent, SettingsIconComponent, RoomNameLabelComponent, GameDisplayComponent],
+  declarations: [GameComponent, DisplayScoreComponent, GameMessagesComponent, SettingsIconComponent, RoomNameLabelComponent, GameDisplayComponent, KittyComponent, CardsInPlayComponent, TrumpIndicatorComponent],
   imports: [
     CommonModule,
     MatIconModule,
