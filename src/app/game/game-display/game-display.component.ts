@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
-import { of } from "rxjs";
+import { of, Observable } from "rxjs";
 import { Store, select } from "@ngrx/store";
-import { selectCurrentDealer, selectIsCurrentPlayerActive } from "src/app/state/selectors";
+import { selectCurrentDealer, selectIsCurrentPlayerActive, selectGameState } from "src/app/state/selectors";
 import { tap, map } from "rxjs/operators";
 
 @Component({
@@ -11,6 +11,7 @@ import { tap, map } from "rxjs/operators";
 })
 export class GameDisplayComponent {
   dealer = this._store.pipe(select(selectCurrentDealer));
+  gameStatus = this._store.pipe(select(selectGameState));
 
   cards = of([
     { value: "9", suit: "clubs" },
@@ -41,6 +42,22 @@ export class GameDisplayComponent {
           ? `${playerName} (Dealer)`
           : `${playerName}`;
       })
+    );
+  }
+  
+  get isGameStateChoosingTrump(): Observable<boolean> {
+    return this.gameStatus.pipe(
+      map(gameStatus => 
+        gameStatus === 'player discarding'
+      )
+    );
+  }
+
+  get isGameStatePlaying(): Observable<boolean> {
+    return this.gameStatus.pipe(
+      map(gameStatus => 
+        gameStatus === 'player playing'
+      )
     );
   }
 }

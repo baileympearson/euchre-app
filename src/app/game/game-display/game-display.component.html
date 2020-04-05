@@ -8,7 +8,7 @@
     </div>
     <div class="flex-row">
       <span class="player-name">
-        {{ formatPlayerName("keaton") | async | titlecase }}
+        {{ formatPlayerName("jordyn") | async | titlecase }}
       </span>
     </div>
   </div>
@@ -26,8 +26,8 @@
       </span>
     </div>
 
-    <!-- <app-kitty class="content-center"></app-kitty> -->
-    <app-cards-in-play></app-cards-in-play>
+    <app-kitty class="content-center" *ngIf="isGameStateChoosingTrump | async"></app-kitty>
+    <app-cards-in-play *ngIf="isGameStatePlaying | async"></app-cards-in-play>
 
     <div class="fixed-width">
       <span class="player-name">

@@ -9,11 +9,19 @@ import { filter, map } from 'rxjs/operators';
   styleUrls: ['./cards-in-play.component.css']
 })
 export class CardsInPlayComponent {
-  // southCard = of([ { value: '10', suit: 'clubs' }]);
-  northCard = of([ { value: '10', suit: 'clubs' }]);
-  westCard = of([ { value: '10', suit: 'clubs' }]);
-  eastCard = of([ { value: '10', suit: 'clubs' }]);
   southCard = of([ { value: '10', suit: 'clubs' }]).pipe(
+    filter(kitty => !!kitty),
+    map(kitty => `assets/cards/${kitty[0].value}_of_${kitty[0].suit}.png`)
+  );
+  northCard = of([ { value: '10', suit: 'clubs' }]).pipe(
+    filter(kitty => !!kitty),
+    map(kitty => `assets/cards/${kitty[0].value}_of_${kitty[0].suit}.png`)
+  );
+  eastCard = of([ { value: '10', suit: 'clubs' }]).pipe(
+    filter(kitty => !!kitty),
+    map(kitty => `assets/cards/${kitty[0].value}_of_${kitty[0].suit}.png`)
+  );
+  westCard = of([ { value: '10', suit: 'clubs' }]).pipe(
     filter(kitty => !!kitty),
     map(kitty => `assets/cards/${kitty[0].value}_of_${kitty[0].suit}.png`)
   );

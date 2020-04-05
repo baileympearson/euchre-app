@@ -57,14 +57,14 @@ const initialState: StoreState = {
     teams: {
       teamA: {
         player1: 'bailey',
-        player2: 'keaton',
+        player2: 'jordyn',
       },
       teamB: {
         player1: 'joe',
         player2: 'nate',
       },
     },
-    gameStatus: 'player dealing',
+    gameStatus: 'player playing',
     handData: {
       kitty: [{ value: '9', suit: 'clubs' }],
       kittyFaceUp: true,

@@ -83,3 +83,8 @@ export const selectTrumpSuit = createSelector(
     selectActiveGameState,
     state => state.handData.trumpSuit
 )
+
+export const selectGameState = createSelector(
+    selectActiveGameState,
+    state => state.gameStatus
+)
