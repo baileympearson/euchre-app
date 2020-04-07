@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { MatIconRegistry } from '@angular/material/icon';
-import { DomSanitizer } from '@angular/platform-browser';
+import { Component } from '@angular/core';
 import { GameDialogsService } from '../game-dialogs/game-dialog.service';
 
 @Component({
@@ -9,18 +7,7 @@ import { GameDialogsService } from '../game-dialogs/game-dialog.service';
   styleUrls: ['./settings-icon.component.css'],
 })
 export class SettingsIconComponent {
-  constructor(
-    private _iconRegistry: MatIconRegistry,
-    private _sanitizer: DomSanitizer,
-    private _gameDialogService: GameDialogsService
-  ) {
-    this._iconRegistry.addSvgIcon(
-      'settings-icon',
-      this._sanitizer.bypassSecurityTrustResourceUrl(
-        'assets/icons/settings-24px.svg'
-      )
-    );
-  }
+  constructor(private _gameDialogService: GameDialogsService) {}
 
   launchSettingsDialog() {
     this._gameDialogService.openAcceptTrumpDialog();
