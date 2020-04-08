@@ -6,6 +6,7 @@ import { toggleElevateCards } from 'src/app/state/actions';
 import { CutDeckDialogComponent } from './cut-deck-dialog/cut-deck-dialog.component';
 import { WaitingForPlayersDialogComponent } from './waiting-for-players-dialog/waiting-for-players-dialog.component';
 import { JoinGameDialogComponent } from './join-game-dialog/join-game-dialog.component';
+import { ChooseTrumpDialogComponent } from './choose-trump-dialog/choose-trump-dialog.component';
 
 @Injectable({
   providedIn: 'root',
@@ -39,6 +40,13 @@ export class GameDialogsService {
   openJoinGameDialog(): MatDialogRef<JoinGameDialogComponent> {
     this._store.dispatch(toggleElevateCards());
     return this._matDialog.open(JoinGameDialogComponent, {
+      disableClose: true,
+    });
+  }
+  
+  openChooseTrumpDialog(): MatDialogRef<ChooseTrumpDialogComponent> {
+    this._store.dispatch(toggleElevateCards());
+    return this._matDialog.open(ChooseTrumpDialogComponent, {
       disableClose: true,
     });
   }

@@ -6,8 +6,8 @@
   <div mat-dialog-content class="">
     <div class="copy-to-clipboard-container">{{ 3 }} /4 Players Active</div>
     <div mat-dialog-content>
-      Looks like we're waiting for players. Copy the link below and share it with
-      your friends:
+      Looks like we're waiting for players. Copy the link below and share it
+      with your friends:
     </div>
 
     <div class="copy-to-clipboard-container">
@@ -26,18 +26,34 @@
 
 <ng-container *ngIf="!(waitingForPlayers | async)">
   <h1 mat-dialog-title class="center-dialog-items">
-    <div> Start Game </div>
+    <div>Start Game</div>
   </h1>
   <div mat-dialog-content class="center-dialog-items">
     <div mat-dialog-content>
-        Looks like everyone is here! 
+      Looks like everyone is here!
     </div>
-    <div>
+    <ng-container *ngIf="isHost | async">
+      <div>
         You're the dealer, so go ahead and choose your partner.
-    </div>
+      </div>
 
-    <button mat-flat-button color="secondary" class="name-button" (click)="choosePartner('keaton')"> Keaton </button>
-    <button mat-flat-button color="secondary" class="name-button" (click)="choosePartner('keaton')"> Keaton </button>
-    <button mat-flat-button color="secondary" class="name-button" (click)="choosePartner('keaton')"> Keaton </button>
+      <div class="choose-partner-button-container">
+      <button
+        *ngFor="let parter of potentialPartnerNames | async"
+        mat-stroked-button
+        color="secondary"
+        class="name-button"
+        (click)="choosePartner(parter)"
+      >
+        {{ parter | titlecase }}
+      </button>
+    </div>
+    </ng-container>
+
+    <ng-container *ngIf="!(isHost | async)">
+      <div>
+        We're waiting on the host to choose their partner.
+      </div>
+    </ng-container>
   </div>
 </ng-container>

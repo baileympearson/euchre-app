@@ -1,0 +1,37 @@
+
+.display-suits {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin: 8px;
+    margin-bottom: 16px;
+}
+
+.icon {
+    width: 72px;
+    height: 72px;
+    fill: grey;
+
+    padding: 8px;
+
+    /* transparent border so things don't 
+    stretch on hover */
+    border: 1px solid rgba(255,255,255,0);
+}
+
+.icon:hover {
+    cursor: pointer;
+    border: 1px solid white;
+    border-radius: 4px;
+}
+
+.dialog-body-content {
+    padding: 16px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}

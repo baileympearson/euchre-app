@@ -30,4 +30,12 @@
 
 .name-button {
     width: 100%;
+    margin: 8px;
+}
+
+.choose-partner-button-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-evenly;
 }

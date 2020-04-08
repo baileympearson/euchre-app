@@ -1,1 +1,23 @@
-<p>choose-trump-dialog works!</p>
+<h1 mat-dialog-title>
+  Would you like to choose the trump suit?
+</h1>
+<div mat-dialog-content class="dialog-body-content">
+  <div class="display-suits">
+    <mat-icon
+      *ngFor="let suit of suits | async"
+      svgIcon="{{ suit }}-icon"
+      class="icon"
+      (click)="onClickChooseTrump(suit)"
+    ></mat-icon>
+    
+  </div>
+
+  <button
+    mat-button
+    (click)="onClickPassTrump()"
+    color="secondary"
+    class="button-text"
+  >
+    Nah, I'll Pass
+  </button>
+</div>
