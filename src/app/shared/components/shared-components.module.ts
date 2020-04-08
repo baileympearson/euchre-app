@@ -4,14 +4,19 @@ import { HandViewContainerComponent } from './hand-view-container/hand-view-cont
 import { CardToAssetPipe } from '../pipes/card-to-asset/card-to-asset.pipe';
 import { SelectCardComponent } from './select-card/select-card.component';
 import { VerticalHandViewContainerComponent } from './vertical-hand-view-container/vertical-hand-view-container.component';
+import { CreateGameFormComponent } from './create-game-form/create-game-form.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 
 
 @NgModule({
-  declarations: [HandViewContainerComponent, SelectCardComponent, VerticalHandViewContainerComponent],
+  declarations: [HandViewContainerComponent, SelectCardComponent, VerticalHandViewContainerComponent, CreateGameFormComponent],
   imports: [
     CommonModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
-  exports: [HandViewContainerComponent, SelectCardComponent, VerticalHandViewContainerComponent]
+  exports: [HandViewContainerComponent, SelectCardComponent, VerticalHandViewContainerComponent, CreateGameFormComponent]
 })
 export class SharedComponentsModule { }

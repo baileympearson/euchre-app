@@ -1,19 +1,15 @@
 <div class="landing-page-center">
-  <div class="landing-page-container" *ngIf="landingPageState === 'login'">
-    <app-login-component> </app-login-component>
-    <span>
-      <span> Don't have an account? Click </span>
-      <button (click)="toggleState()" class="link-button">here</button>
-      <span> to register! </span>
-    </span>
-  </div>
+  <div class="landing-page-container">
+    <div class="title-container"> Euchre...? Euchre...? </div>
 
-  <div class="landing-page-container" *ngIf="landingPageState === 'register'">
-    <app-register-component> </app-register-component>
-    <span>
-      <span> Already have an account? Click </span>
-      <button (click)="toggleState()" class="link-button">here</button>
-      <span> to login! </span>
-    </span>
+    <app-hand-view-container [cards]="cards" [showFaceDown]="true"></app-hand-view-container>
+
+    <div class="horizontal-space">
+      <button mat-raised-button (click)="onClickCreateGame()">  
+        <mat-icon svgIcon="plus-icon"></mat-icon>
+        {{ 'Create New Game' | uppercase }} 
+      </button>
+      <button mat-raised-button (click)="onClickJoinGame()"> {{ 'Join Game' | uppercase }} </button>
+    </div>
   </div>
 </div>

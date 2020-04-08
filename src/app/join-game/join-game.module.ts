@@ -1,22 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { JoinGameComponent } from './join-game.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { CreateGameComponent } from './create-game/create-game.component';
 import { SharedComponentsModule } from '../shared/components/shared-components.module';
 
 
 
 @NgModule({
-  declarations: [CreateGameComponent],
+  declarations: [JoinGameComponent],
   imports: [
     CommonModule,
-    MatFormFieldModule,
     MatInputModule,
+    MatFormFieldModule,
     MatButtonModule,
     SharedComponentsModule
-  ],
-  exports: [CreateGameComponent]
+  ]
 })
-export class CreateGameModule { }
+export class JoinGameModule { }

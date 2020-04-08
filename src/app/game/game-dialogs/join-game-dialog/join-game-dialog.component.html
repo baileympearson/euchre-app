@@ -1,0 +1,25 @@
+<h1 mat-dialog-title class="center-dialog-items">
+  <div>You're almost there!</div>
+</h1>
+<div mat-dialog-content class="">
+  <div class="copy-to-clipboard-container">
+    Enter your name to join the game:
+  </div>
+
+  <mat-form-field class="full-width">
+    <mat-label>Your Name</mat-label>
+    <input matInput placeholder="Enter your name here" class="color-white" />
+  </mat-form-field>
+
+    <div mat-dialog-actions align="end">
+    <button
+      mat-button
+      (click)="onClickEnterGame()"
+      cdkFocusInitial
+      class="button-text"
+    >
+      Enter Game 
+    </button>
+  </div>
+
+</div>

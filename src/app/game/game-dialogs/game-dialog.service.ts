@@ -5,32 +5,41 @@ import { Store } from '@ngrx/store';
 import { toggleElevateCards } from 'src/app/state/actions';
 import { CutDeckDialogComponent } from './cut-deck-dialog/cut-deck-dialog.component';
 import { WaitingForPlayersDialogComponent } from './waiting-for-players-dialog/waiting-for-players-dialog.component';
+import { JoinGameDialogComponent } from './join-game-dialog/join-game-dialog.component';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class GameDialogsService {
-
-  constructor(private _matDialog: MatDialog, private _store: Store<any>) { }
+  constructor(private _matDialog: MatDialog, private _store: Store<any>) {}
 
   openAcceptTrumpDialog(): MatDialogRef<AcceptTrumpDialogComponent> {
     this._store.dispatch(toggleElevateCards());
     return this._matDialog.open(AcceptTrumpDialogComponent, {
-      disableClose: true
+      disableClose: true,
     });
   }
 
   openCutDeckDialog(): MatDialogRef<CutDeckDialogComponent> {
     this._store.dispatch(toggleElevateCards());
     return this._matDialog.open(CutDeckDialogComponent, {
-      disableClose: true
+      disableClose: true,
     });
   }
 
-  openWaitingForPlayersDialog(): MatDialogRef<WaitingForPlayersDialogComponent> {
+  openWaitingForPlayersDialog(): MatDialogRef<
+    WaitingForPlayersDialogComponent
+  > {
     this._store.dispatch(toggleElevateCards());
     return this._matDialog.open(WaitingForPlayersDialogComponent, {
-      disableClose: true
+      disableClose: true,
+    });
+  }
+
+  openJoinGameDialog(): MatDialogRef<JoinGameDialogComponent> {
+    this._store.dispatch(toggleElevateCards());
+    return this._matDialog.open(JoinGameDialogComponent, {
+      disableClose: true,
     });
   }
 }

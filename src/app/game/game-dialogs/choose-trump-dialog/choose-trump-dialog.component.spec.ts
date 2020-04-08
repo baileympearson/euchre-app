@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CreateGameWrapperComponent } from './create-game-wrapper.component';
+import { ChooseTrumpDialogComponent } from './choose-trump-dialog.component';
 
-describe('CreateGameWrapperComponent', () => {
-  let component: CreateGameWrapperComponent;
-  let fixture: ComponentFixture<CreateGameWrapperComponent>;
+describe('ChooseTrumpDialogComponent', () => {
+  let component: ChooseTrumpDialogComponent;
+  let fixture: ComponentFixture<ChooseTrumpDialogComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CreateGameWrapperComponent ]
+      declarations: [ ChooseTrumpDialogComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CreateGameWrapperComponent);
+    fixture = TestBed.createComponent(ChooseTrumpDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

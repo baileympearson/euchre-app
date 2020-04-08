@@ -12,7 +12,7 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./waiting-for-players-dialog.component.css'],
 })
 export class WaitingForPlayersDialogComponent {
-  waitingForPlayers = of(false);
+  waitingForPlayers = of(true);
   _roomName = '';
   roomName = this._store.pipe(select(selectGameName));
 

@@ -6,7 +6,7 @@ import { SharedComponentsModule } from './components/shared-components.module';
 import { IconRegistryService } from './services/icon-registry.service';
 
 @NgModule({
-  declarations: [CardToAssetPipe, CardToCardNamePipe],
+  declarations: [CardToAssetPipe, CardToCardNamePipe ],
   imports: [
     CommonModule,
     SharedComponentsModule

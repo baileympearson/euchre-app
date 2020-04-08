@@ -12,15 +12,28 @@
     flex-direction: column;
     justify-content: space-evenly;
     height: 50%;
+    align-items: center;
 }
 
-.title-container {
-    font-size: 60px;
+.join-game-title {
     color: white;
+    font-size: 60px;
 }
 
-.horizontal-space {
+.join-game-subtitle {
+    color: white;
+    font-size: 16px;
+}
+
+
+
+
+.right-align {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.full-width {
+    width: 100%;
 }

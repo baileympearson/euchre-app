@@ -14,12 +14,11 @@ import { AppReducers } from './state/state';
 import { AppEffects } from './state/effects';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
-import { ToolbarModule } from './toolbar/toolbar.module';
 import { CreateGameModule } from './create-game/create-game.module';
-import { GameSetupModule } from './game-setup/game-setup.module';
 import { GameModule } from './game/game.module';
 import { HttpClientModule } from '@angular/common/http';
 import { appReducer } from './state/reducers';
+import { JoinGameModule } from './join-game/join-game.module';
 
 @NgModule({
   declarations: [
@@ -30,9 +29,8 @@ import { appReducer } from './state/reducers';
     AppRoutingModule,
     MatDialogModule,
     LandingPageModule,
-    ToolbarModule,
     CreateGameModule,
-    GameSetupModule,
+    JoinGameModule,
     SharedModule,
     GameModule,
     HttpClientModule,

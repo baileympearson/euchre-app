@@ -70,5 +70,11 @@ export class IconRegistryService {
         'assets/svgs/sync-icon.svg'
       )
     );
+    this._iconRegistry.addSvgIcon(
+      'plus-icon',
+      this._sanitizer.bypassSecurityTrustResourceUrl(
+        'assets/svgs/add-icon.svg'
+      )
+    );
   }
 }

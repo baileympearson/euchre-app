@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { landingPageRoute } from 'src/app/shared/constants/routing-constants';
-
-type LandingPageState = 'login' | 'register';
+import { Component } from '@angular/core';
+import { of } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-landing-page',
@@ -9,12 +8,21 @@ type LandingPageState = 'login' | 'register';
   styleUrls: ['./landing-page.component.css']
 })
 export class LandingPageComponent {
-  landingPageState: LandingPageState = 'login';
+  cards = of([
+    { value: '9', suit: 'clubs '},
+    { value: '9', suit: 'clubs '},
+    { value: '9', suit: 'clubs '},
+    { value: '9', suit: 'clubs '},
+    { value: '9', suit: 'clubs '},
+  ]);
 
-  constructor() { }
+  constructor(private _router: Router) { }
 
-  toggleState() {
-    this.landingPageState = this.landingPageState === 'login' ? 'register' : 'login';
-    console.log(this.landingPageState);
+  onClickCreateGame() {
+    this._router.navigate(['/creategame']);
+  }
+
+  onClickJoinGame() {
+    this._router.navigate(['/joingame']);
   }
 }
