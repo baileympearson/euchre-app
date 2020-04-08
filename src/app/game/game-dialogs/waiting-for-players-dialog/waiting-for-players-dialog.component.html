@@ -1,0 +1,43 @@
+<ng-container *ngIf="waitingForPlayers | async">
+  <h1 mat-dialog-title class="center-dialog-items">
+    <mat-icon svgIcon="sync-icon"> </mat-icon>
+    <div>Waiting For Players</div>
+  </h1>
+  <div mat-dialog-content class="">
+    <div class="copy-to-clipboard-container">{{ 3 }} /4 Players Active</div>
+    <div mat-dialog-content>
+      Looks like we're waiting for players. Copy this code and share it with
+      your friends:
+    </div>
+
+    <div class="copy-to-clipboard-container">
+      <div class="room-name-label">
+        {{ roomName | async }}
+      </div>
+      <mat-icon
+        class="copy-to-clipboard"
+        svgIcon="copy-to-clipboard"
+        [cdkCopyToClipboard]="copyGameLinkToClipboard()"
+        matTooltip="Copy Sharable Link!"
+      ></mat-icon>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="!(waitingForPlayers | async)">
+  <h1 mat-dialog-title class="center-dialog-items">
+    <div> Start Game </div>
+  </h1>
+  <div mat-dialog-content class="center-dialog-items">
+    <div mat-dialog-content>
+        Looks like everyone is here! 
+    </div>
+    <div>
+        You're the dealer, so go ahead and choose your partner.
+    </div>
+
+    <button mat-flat-button color="secondary" class="name-button" (click)="choosePartner('keaton')"> Keaton </button>
+    <button mat-flat-button color="secondary" class="name-button" (click)="choosePartner('keaton')"> Keaton </button>
+    <button mat-flat-button color="secondary" class="name-button" (click)="choosePartner('keaton')"> Keaton </button>
+  </div>
+</ng-container>

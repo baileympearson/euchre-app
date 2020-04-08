@@ -1,0 +1,27 @@
+<h1 mat-dialog-title>
+  <mat-icon svgIcon="error-icon"> </mat-icon>
+  Cut the Deck
+</h1>
+<div mat-dialog-content>
+  <div class="title">
+    Use the slider to pick where the deck gets cut. When you're done, click "Cut
+    It Here"
+  </div>
+
+  <mat-slider>
+    [max]="max" [min]="min" [step]="step" [thumbLabel]="thumbLabel"
+    [value]="value" [(ngModel)]="value"
+  </mat-slider>
+
+  <div mat-dialog-actions align="end">
+    <button
+      mat-button
+      (click)="closeCutDeckDialog()"
+      cdkFocusInitial
+      color="primary"
+      class="button-text"
+    >
+      Pick It Up
+    </button>
+  </div>
+</div>

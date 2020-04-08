@@ -1,0 +1,32 @@
+.copy-to-clipboard {
+    cursor: pointer;
+    border: 1px solid lightgrey;
+    border-radius: 0 4px 4px 0;
+    padding: 8px;
+    margin: 0;
+}
+
+.copy-to-clipboard-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.room-name-label {
+    border: 1px solid lightgrey;
+    border-radius: 4px 0 0 4px;
+    padding: 8px;
+    margin: 0;
+    border-right: 0;
+}
+
+.center-dialog-items {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.name-button {
+    width: 100%;
+}

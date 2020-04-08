@@ -1,13 +1,30 @@
-<h1 mat-dialog-title> 
-    <mat-icon svgIcon="error-icon">
-    </mat-icon>
-    Accept the trump? 
+<h1 mat-dialog-title>
+  <mat-icon svgIcon="error-icon"> </mat-icon>
+  Accept the trump?
 </h1>
 <div mat-dialog-content>
-  <div class="title"> {{ dealer | async | titlecase }} (as dealer) Will Pick Up </div>
+  <div class="title">
+    {{ dealer | async | titlecase }} (as dealer) Will Pick Up
+  </div>
   <app-hand-view-container [cards]="kitty"> </app-hand-view-container>
 
-<div mat-dialog-actions align="end">
-  <button mat-button (click)="onChooseNo()" color="secondary" class="button-text"> I'll Pass </button>
-  <button mat-button (click)="onChooseYes()" cdkFocusInitial color="primary" class="button-text"> Pick It Up </button>
+  <div mat-dialog-actions align="end">
+    <button
+      mat-button
+      (click)="onChooseNo()"
+      color="secondary"
+      class="button-text"
+    >
+      I'll Pass
+    </button>
+    <button
+      mat-button
+      (click)="onChooseYes()"
+      cdkFocusInitial
+      color="primary"
+      class="button-text"
+    >
+      Pick It Up
+    </button>
+  </div>
 </div>

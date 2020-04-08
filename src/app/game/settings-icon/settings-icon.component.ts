@@ -10,6 +10,6 @@ export class SettingsIconComponent {
   constructor(private _gameDialogService: GameDialogsService) {}
 
   launchSettingsDialog() {
-    this._gameDialogService.openAcceptTrumpDialog();
+    this._gameDialogService.openWaitingForPlayersDialog();
   }
 }

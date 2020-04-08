@@ -57,5 +57,18 @@ export class IconRegistryService {
         'assets/svgs/spades.svg'
       )
     );
+
+    this._iconRegistry.addSvgIcon(
+      'copy-to-clipboard',
+      this._sanitizer.bypassSecurityTrustResourceUrl(
+        'assets/svgs/copy-to-clipboard.svg'
+      )
+    );
+    this._iconRegistry.addSvgIcon(
+      'sync-icon',
+      this._sanitizer.bypassSecurityTrustResourceUrl(
+        'assets/svgs/sync-icon.svg'
+      )
+    );
   }
 }
