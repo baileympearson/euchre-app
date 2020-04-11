@@ -1,0 +1,16 @@
+.icon-text {
+  color: white;
+  top: 15px;
+  left: 15px;
+  font-size: 32px;
+  position: relative;
+}
+
+.circle {
+  height: 50px;
+  width: 50px;
+  background-color: orange;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+}

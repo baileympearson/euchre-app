@@ -7,16 +7,17 @@ import { VerticalHandViewContainerComponent } from './vertical-hand-view-contain
 import { CreateGameFormComponent } from './create-game-form/create-game-form.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { DealerIconComponent } from './dealer-icon/dealer-icon.component';
 
 
 
 @NgModule({
-  declarations: [HandViewContainerComponent, SelectCardComponent, VerticalHandViewContainerComponent, CreateGameFormComponent],
+  declarations: [HandViewContainerComponent, SelectCardComponent, VerticalHandViewContainerComponent, CreateGameFormComponent, DealerIconComponent],
   imports: [
     CommonModule,
     MatFormFieldModule,
     MatInputModule
   ],
-  exports: [HandViewContainerComponent, SelectCardComponent, VerticalHandViewContainerComponent, CreateGameFormComponent]
+  exports: [HandViewContainerComponent, SelectCardComponent, VerticalHandViewContainerComponent, CreateGameFormComponent, DealerIconComponent]
 })
 export class SharedComponentsModule { }

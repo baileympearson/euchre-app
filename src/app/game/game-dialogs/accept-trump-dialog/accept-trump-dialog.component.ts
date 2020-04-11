@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { MatDialogRef } from '@angular/material/dialog';
 import { map } from 'rxjs/operators';
-import { trumpSuitPassed, trumpSuitAccepted, toggleElevateCards } from 'src/app/state/actions';
+import { trumpSuitPassed, trumpSuitAccepted } from 'src/app/state/actions';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { selectTopOfKitty, selectCurrentDealer } from 'src/app/state/database-state/database-state.selectors';
@@ -35,7 +35,6 @@ export class AcceptTrumpDialogComponent {
   }
 
   closeDialog() {
-    this._store.dispatch(toggleElevateCards());
     this._dialog.close();
   }
 

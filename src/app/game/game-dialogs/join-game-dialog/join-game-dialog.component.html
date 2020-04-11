@@ -6,20 +6,28 @@
     Enter your name to join the game:
   </div>
 
-  <mat-form-field class="full-width">
-    <mat-label>Your Name</mat-label>
-    <input matInput placeholder="Enter your name here" class="color-white" />
-  </mat-form-field>
+  <form #addUserForm="ngForm">
+    <mat-form-field class="full-width">
+      <mat-label>Your Name</mat-label>
+      <input
+        matInput
+        placeholder="Enter your name here"
+        class="color-white"
+        [(ngModel)]="name"
+        name="name"
+      />
+    </mat-form-field>
+  </form>
 
-    <div mat-dialog-actions align="end">
+  <div mat-dialog-actions align="end">
     <button
       mat-button
       (click)="onClickEnterGame()"
       cdkFocusInitial
       class="button-text"
+      [disabled]="name.length === 0"
     >
-      Enter Game 
+      Enter Game
     </button>
   </div>
-
 </div>

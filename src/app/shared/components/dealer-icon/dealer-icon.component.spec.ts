@@ -1,11 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CutDeckDialogComponent } from './cut-deck-dialog.component';
+import { DealerIconComponent } from './dealer-icon.component';
 
-describe('CutDeckDialogComponent', () => {
-  
+describe('DealerIconComponent', () => {
+
   it('should be true', () => {
     expect(true).toBeTruthy();
   })
+
 
 });

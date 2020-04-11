@@ -14,6 +14,7 @@ import { JoinGameDialogComponent } from './join-game-dialog/join-game-dialog.com
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ChooseTrumpDialogComponent } from './choose-trump-dialog/choose-trump-dialog.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ChooseTrumpDialogComponent } from './choose-trump-dialog/choose-trump-d
   imports: [
     CommonModule,
     SharedComponentsModule,
+    FormsModule,
     MatButtonModule,
     MatIconModule,
     MatSliderModule,
