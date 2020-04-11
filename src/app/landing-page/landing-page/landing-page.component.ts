@@ -9,11 +9,11 @@ import { Router } from '@angular/router';
 })
 export class LandingPageComponent {
   cards = of([
-    { value: '9', suit: 'clubs '},
-    { value: '9', suit: 'clubs '},
-    { value: '9', suit: 'clubs '},
-    { value: '9', suit: 'clubs '},
-    { value: '9', suit: 'clubs '},
+    { value: '9', suit: 'clubs' },
+    { value: 'jack', suit: 'hearts' },
+    { value: '10', suit: 'spades' },
+    { value: 'king', suit: 'hearts' },
+    { value: 'queen', suit: 'diamonds' },
   ]);
 
   constructor(private _router: Router) { }

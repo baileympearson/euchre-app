@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
-import { selectTopOfKitty } from 'src/app/state/selectors';
 import { map, filter } from 'rxjs/operators';
+import { selectTopOfKitty } from 'src/app/state/database-state/database-state.selectors';
 
 @Component({
   selector: 'app-kitty',

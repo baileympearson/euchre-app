@@ -1,12 +1,8 @@
-<div class="flex-column">
-    <div class="flex-row top-or-bottom-row">
-        <img class="card-hand-container-card" src="{{ southCard | async }}" />
-    </div>
-    <div class="flex-row middle-row">
-        <img class="card-hand-container-card" src="{{ southCard | async }}" />
-        <img class="card-hand-container-card" src="{{ southCard | async }}" />
-    </div>
-    <div class="flex-row top-or-bottom-row">
-        <img class="card-hand-container-card" src="{{ southCard | async }}" />
+<div class="wrapper-div">
+    <div class="relative-div">
+        <img class="card-hand-container-card south-card" *ngIf="!!(southCard | async)" src="{{ southCard | async }}" />
+        <img class="card-hand-container-card east-card" *ngIf="!!(eastCard | async)" src="{{ eastCard | async }}" />
+        <img class="card-hand-container-card west-card" *ngIf="!!(westCard | async)" src="{{ westCard | async }}" />
+        <img class="card-hand-container-card north-card" *ngIf="!!(northCard | async)" src="{{ northCard | async }}" />
     </div>
 </div>

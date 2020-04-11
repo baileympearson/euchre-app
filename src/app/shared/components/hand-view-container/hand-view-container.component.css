@@ -1,12 +1,32 @@
 .card-hand-container {
-    display: flex;
-    flex-direction: horizontal;
-    justify-content: space-around;
     width: 100%;
+    position: relative;
 }
 
 .card-hand-container-card {
-    width: 80px;
+    width: 100px;
     height: auto;
-    padding: 4px;
+    position: absolute;
+    top: 0px;
+    box-shadow: -2px 2px 2px #888888
 }
+
+.card-hand-container-card:last-of-type {
+    -webkit-transform: rotate(20deg); /* Safari and Chrome */
+    -moz-transform: rotate(20deg);   /* Firefox */
+    -ms-transform: rotate(20deg);   /* IE 9 */
+    -o-transform: rotate(20deg);   /* Opera */
+    transform: rotate(20deg);
+    top: 10px;
+}
+
+.card-hand-container-card:first-of-type {
+    -webkit-transform: rotate(-20deg); /* Safari and Chrome */
+    -moz-transform: rotate(-20deg);   /* Firefox */
+    -ms-transform: rotate(-20deg);   /* IE 9 */
+    -o-transform: rotate(-20deg);   /* Opera */
+    transform: rotate(-20deg);
+    top: 10px;
+}
+
+

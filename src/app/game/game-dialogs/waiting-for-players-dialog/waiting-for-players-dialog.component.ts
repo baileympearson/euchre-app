@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { Store, select } from '@ngrx/store';
-import { selectGameName } from 'src/app/state/selectors';
 import { take } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { Player } from 'src/app/shared/models/player';
 import { MatDialogRef } from '@angular/material/dialog';
+import { selectGameName } from 'src/app/state/database-state/database-state.selectors';
 
 @Component({
   selector: 'app-waiting-for-players-dialog',

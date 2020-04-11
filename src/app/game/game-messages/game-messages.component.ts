@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Store, select } from '@ngrx/store';
-import { selectUserAction } from 'src/app/state/selectors';
+import { selectUserMessage } from 'src/app/state/database-state/database-state.selectors';
 
 @Component({
   selector: 'app-game-messages',
@@ -9,7 +9,7 @@ import { selectUserAction } from 'src/app/state/selectors';
 })
 export class GameMessagesComponent {
 
-  message = this._store.pipe(select(selectUserAction));
+  message = this._store.pipe(select(selectUserMessage));
 
   constructor(private _store: Store<any>) { }
 }

@@ -3,7 +3,7 @@ import { Observable, of } from 'rxjs';
 import { Card } from '../../models/card';
 import { map, tap } from 'rxjs/operators';
 import { Store, select } from '@ngrx/store';
-import { selectElevateCards } from 'src/app/state/selectors';
+import { selectElevateCards } from 'src/app/state/client-state/client-state.selectors';
 
 @Component({
   selector: 'app-select-card',
@@ -29,5 +29,9 @@ export class SelectCardComponent implements OnInit {
 
   onSelectCard(index) {
     alert(JSON.stringify(this._cards[index]));
+  }
+
+  getLeftAttribute(i: number) {
+    return `${(i - 2) * 30 - 25}px`;
   }
 }

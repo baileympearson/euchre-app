@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Store, select } from '@ngrx/store';
-import { selectTrumpSuit } from 'src/app/state/selectors';
 import { map } from 'rxjs/operators';
+import { selectTrumpSuit } from 'src/app/state/database-state/database-state.selectors';
 
 @Component({
   selector: 'app-trump-indicator',

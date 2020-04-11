@@ -1,7 +1,9 @@
 export type GameStatus =
-  | 'player dealing'
-  | 'player cutting'
-  | 'dealer discarding'
-  | 'player playing'
-  | 'hand finished'
-  | 'game finished';
+  | 'not active'
+  | 'waiting for players'
+  | 'dealer choosing teams'
+  | 'waiting to start'
+  | 'choosing trump'
+  | 'accepting trump'
+  | 'playing hand'
+  | 'game over';

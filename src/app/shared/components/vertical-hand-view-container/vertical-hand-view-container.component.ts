@@ -9,4 +9,9 @@ import { Observable } from 'rxjs';
 })
 export class VerticalHandViewContainerComponent {
   @Input() cards: Observable<Card[]>;
+  @Input() placement: 'left' | 'right';
+
+  getLeftAttribute(i: number) {
+    return `${(i - 2) * 30 - 25}px`;
+  }
 }

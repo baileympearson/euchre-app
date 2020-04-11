@@ -15,10 +15,13 @@ export class HandViewContainerComponent implements OnInit {
   cardsToDisplay: Observable<string[]>;
   ngOnInit() {
     this.cardsToDisplay = this.cards.pipe(
-      tap(vals => console.log(vals)),
       map((values) => {
         return values.map((card) => `assets/cards/${card.value}_of_${card.suit}.png`);
       })
     );
+  }
+
+  getLeftAttribute(i: number) {
+    return `${(i - 2) * 30 - 25}px`;
   }
 }

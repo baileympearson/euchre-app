@@ -24,3 +24,9 @@
     flex-direction: row;
     justify-content: space-around;
 }
+
+.card-view-wrapper {
+    display: flex;
+    justify-content: center;
+    height: 150px;
+}

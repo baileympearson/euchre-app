@@ -2,7 +2,10 @@
   <div class="landing-page-container">
     <div class="title-container"> Euchre...? Euchre...? </div>
 
-    <app-hand-view-container [cards]="cards" [showFaceDown]="true"></app-hand-view-container>
+    <div class="card-view-wrapper">
+      <app-hand-view-container [cards]="cards" [showFaceDown]="false"></app-hand-view-container>
+    </div>
+
 
     <div class="horizontal-space">
       <button mat-raised-button (click)="onClickCreateGame()">  

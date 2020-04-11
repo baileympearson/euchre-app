@@ -10,14 +10,13 @@ import { LandingPageModule } from './landing-page/landing-page.module';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
-import { AppReducers } from './state/state';
 import { AppEffects } from './state/effects';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { CreateGameModule } from './create-game/create-game.module';
 import { GameModule } from './game/game.module';
 import { HttpClientModule } from '@angular/common/http';
-import { appReducer } from './state/reducers';
+import { reducers } from './state/reducers';
 import { JoinGameModule } from './join-game/join-game.module';
 
 @NgModule({
@@ -35,7 +34,7 @@ import { JoinGameModule } from './join-game/join-game.module';
     GameModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    StoreModule.forRoot({ appState: appReducer }),
+    StoreModule.forRoot(reducers),
     StoreDevtoolsModule.instrument({ maxAge: 50, logOnly: environment.production }),
     EffectsModule.forRoot([AppEffects]),
     StoreRouterConnectingModule.forRoot()

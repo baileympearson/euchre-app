@@ -1,11 +1,11 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Store, select } from '@ngrx/store';
-import { selectCurrentDealer, selectTopOfKitty } from 'src/app/state/selectors';
 import { MatDialogRef } from '@angular/material/dialog';
 import { map } from 'rxjs/operators';
 import { trumpSuitPassed, trumpSuitAccepted, toggleElevateCards } from 'src/app/state/actions';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
+import { selectTopOfKitty, selectCurrentDealer } from 'src/app/state/database-state/database-state.selectors';
 
 @Component({
   selector: 'app-accept-trump-dialog',

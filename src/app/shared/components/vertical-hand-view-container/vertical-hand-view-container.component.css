@@ -1,19 +1,60 @@
-.card-hand-container {
+.relative-div  {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    width: 80px;
+    justify-content: center;
 }
 
-.card-hand-container-card {
+.card-hand-container {
+    display: flex;
     width: 80px;
-    padding: 4px;
+    position: relative;
 }
 
-.rotate-90-degrees {
-    -webkit-transform: rotate(90deg); /* Safari and Chrome */
-    -moz-transform: rotate(90deg);   /* Firefox */
-    -ms-transform: rotate(90deg);   /* IE 9 */
-    -o-transform: rotate(90deg);   /* Opera */
-    transform: rotate(90deg);
+.card-hand-container-card-left {
+    width: 100px;
+    height: auto;
+    position: absolute;
+    top: 0px;
 }
+
+.card-hand-container-card-right {
+    width: 100px;
+    height: auto;
+    position: absolute;
+    top: 0px;
+}
+
+.card-hand-container-card-left:last-of-type {
+    -webkit-transform: rotate(20deg); /* Safari and Chrome */
+    -moz-transform: rotate(20deg);   /* Firefox */
+    -ms-transform: rotate(20deg);   /* IE 9 */
+    -o-transform: rotate(20deg);   /* Opera */
+    transform: rotate(20deg);
+    top: 10px;
+}
+
+.card-hand-container-card-left:first-of-type {
+    -webkit-transform: rotate(-20deg); /* Safari and Chrome */
+    -moz-transform: rotate(-20deg);   /* Firefox */
+    -ms-transform: rotate(-20deg);   /* IE 9 */
+    -o-transform: rotate(-20deg);   /* Opera */
+    transform: rotate(-20deg);
+    top: 10px;
+}
+
+.card-hand-container-card-right:first-of-type {
+    -webkit-transform: rotate(20deg); /* Safari and Chrome */
+    -moz-transform: rotate(20deg);   /* Firefox */
+    -ms-transform: rotate(20deg);   /* IE 9 */
+    -o-transform: rotate(20deg);   /* Opera */
+    transform: rotate(20deg);
+}
+
+.card-hand-container-card-right:last-of-type {
+    -webkit-transform: rotate(-20deg); /* Safari and Chrome */
+    -moz-transform: rotate(-20deg);   /* Firefox */
+    -ms-transform: rotate(-20deg);   /* IE 9 */
+    -o-transform: rotate(-20deg);   /* Opera */
+    transform: rotate(-20deg);
+}
+

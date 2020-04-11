@@ -1,8 +1,20 @@
-<!-- <div class="card-hand-container rotate-90-degrees"> -->
+<div class="relative-div">
+<!-- <div *ngIf="placement === 'left'" class="card-hand-container">
+  <img
+    *ngFor="let card of cards | async; let i = index;"
+    class="card-hand-container-card-left"
+    src="assets/cards/face_down.jpg"
+    [style.left]="getLeftAttribute(i)"
+  />
+</div> -->
+
 <div class="card-hand-container">
   <img
-    *ngFor="let card of cards | async"
-    class="card-hand-container-card"
+    *ngFor="let card of cards | async; let i = index;"
+    class="card-hand-container-card-left"
     src="assets/cards/face_down.jpg"
+    [style.left]="getLeftAttribute(i)"
   />
+</div>
+
 </div>

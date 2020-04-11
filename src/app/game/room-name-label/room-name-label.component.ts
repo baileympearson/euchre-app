@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { of } from 'rxjs';
 import { Store, select } from '@ngrx/store';
-import { selectGameName } from 'src/app/state/selectors';
+import { selectGameName } from 'src/app/state/database-state/database-state.selectors';
 
 @Component({
   selector: 'app-room-name-label',

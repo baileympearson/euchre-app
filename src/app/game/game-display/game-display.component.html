@@ -2,13 +2,13 @@
   <div>
     <div class="rotate-upside-down center-cards">
       <div class="game-hand-viewer">
-        <app-hand-view-container [showFaceDown]="true" [cards]="cards">
+        <app-hand-view-container [showFaceDown]="true" [cards]="northCards">
         </app-hand-view-container>
       </div>
     </div>
     <div class="flex-row">
       <span class="player-name">
-        {{ formatPlayerName("jordyn") | async | titlecase }}
+          {{ northName | async | titlecase }}
       </span>
     </div>
   </div>
@@ -17,12 +17,13 @@
     <div class="spacer"> </div>
     <div class="fixed-width">
       <app-vertical-hand-view-container
-        [cards]="cards"
+        [cards]="westCards"
         class="rotate-90-degrees"
+        [placement]="'left'"
       >
       </app-vertical-hand-view-container>
       <span class="player-name">
-        {{ formatPlayerName("joe") | async | titlecase }}
+          {{ westName | async | titlecase }}
       </span>
     </div>
 
@@ -31,11 +32,12 @@
 
     <div class="fixed-width">
       <span class="player-name">
-        {{ formatPlayerName("nate") | async | titlecase }}
+          {{ eastName | async | titlecase }}
       </span>
       <app-vertical-hand-view-container
-        [cards]="cards"
-        class="rotate-90-degrees"
+        [cards]="eastCards"
+        class="rotate-270-degrees"
+        [placement]="'right'"
       >
       </app-vertical-hand-view-container>
     </div>
@@ -46,15 +48,18 @@
     <div>
       <div class="flex-row">
         <span class="player-name">
-          {{ formatPlayerName("bailey") | async | titlecase }}
+          {{ southName | async | titlecase }}
         </span>
       </div>
-      <div class="game-hand-viewer on-top">
-        <app-select-card *ngIf="isCurrentPlayersTurn | async" [cards]="cards">
+      <div class="game-hand-viewer">
+        <app-select-card *ngIf="isCurrentPlayersTurn | async" [cards]="southCards"
+          class="game-hand-viewer"
+        >
         </app-select-card>
         <app-hand-view-container
           *ngIf="!(isCurrentPlayersTurn | async)"
-          [cards]="cards"
+          [cards]="southCards"
+          class="game-hand-viewer"
         >
         </app-hand-view-container>
       </div>

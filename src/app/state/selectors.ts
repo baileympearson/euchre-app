@@ -1,89 +1,91 @@
-import { createSelector } from '@ngrx/store';
+export const selectClientState = state => state['client-state'];
 
-export const selectAppState = state => {
-    return state.appState;
-};
+export const selectDBState = state => state['db-state'];
 
-export const selectActiveGameState = createSelector(
-    selectAppState,
-    (state) => {
-        return state.activeGame;
-    }
-);
+// export const selectAppState = state => {
+//     return state.appState;
+// };
 
-export const selectScore = createSelector(
-    selectActiveGameState,
-    (state) => state.score
-);
+// export const selectActiveGameState = createSelector(
+//     selectAppState,
+//     (state) => {
+//         return state.activeGame;
+//     }
+// );
 
-export const selectHandScore = createSelector(
-    selectScore,
-    (state) => state.hand
-);
+// export const selectScore = createSelector(
+//     selectActiveGameState,
+//     (state) => state.score
+// );
 
-export const selectGameScore = createSelector(
-    selectScore,
-    (state) => state.game
-);
+// export const selectHandScore = createSelector(
+//     selectScore,
+//     (state) => state.hand
+// );
 
-export const selectTeamPlayers = createSelector(
-    selectActiveGameState,
-    (activeGameState) => activeGameState.teams
-);
+// export const selectGameScore = createSelector(
+//     selectScore,
+//     (state) => state.game
+// );
 
-export const selectGameName = createSelector(
-    selectActiveGameState,
-    state => state.gameName
-);
+// export const selectTeamPlayers = createSelector(
+//     selectActiveGameState,
+//     (activeGameState) => activeGameState.teams
+// );
 
-export const selectUser = createSelector(
-    selectAppState,
-    state => state.user
-);
+// export const selectGameName = createSelector(
+//     selectActiveGameState,
+//     state => state.gameName
+// );
 
-export const selectCurrentDealer = createSelector(
-    selectActiveGameState,
-    state => state.handData.currentDealer
-);
+// export const selectUser = createSelector(
+//     selectAppState,
+//     state => state.user
+// );
 
-export const selectTopOfKitty = createSelector(
-    selectActiveGameState,
-    state => {
-        const kitty = state.handData.kitty;
-        if (kitty.length === 0) {
-            return [];
-        }
-        return [kitty[0]];
-    }
-);
+// export const selectCurrentDealer = createSelector(
+//     selectActiveGameState,
+//     state => state.handData.currentDealer
+// );
 
-export const selectUserAction = createSelector(
-    selectActiveGameState,
-    state => state.userAction
-)
+// export const selectTopOfKitty = createSelector(
+//     selectActiveGameState,
+//     state => {
+//         const kitty = state.handData.kitty;
+//         if (kitty.length === 0) {
+//             return [];
+//         }
+//         return [kitty[0]];
+//     }
+// );
 
-export const selectElevateCards = createSelector(
-    selectActiveGameState,
-    state => state.gameMetaData.elevateCards
-);
+// export const selectUserAction = createSelector(
+//     selectActiveGameState,
+//     state => state.userAction
+// )
 
-export const selectActivePlayer = createSelector(
-    selectActiveGameState,
-    state => state.handData.activePlayer
-);
+// export const selectElevateCards = createSelector(
+//     selectActiveGameState,
+//     state => state.gameMetaData.elevateCards
+// );
 
-export const selectIsCurrentPlayerActive = createSelector(
-    selectUser,
-    selectActivePlayer,
-    (user, activePlayer) => user.toLowerCase() === activePlayer.toLowerCase()
-)
+// export const selectActivePlayer = createSelector(
+//     selectActiveGameState,
+//     state => state.handData.activePlayer
+// );
 
-export const selectTrumpSuit = createSelector(
-    selectActiveGameState,
-    state => state.handData.trumpSuit
-)
+// export const selectIsCurrentPlayerActive = createSelector(
+//     selectUser,
+//     selectActivePlayer,
+//     (user, activePlayer) => user.toLowerCase() === activePlayer.toLowerCase()
+// )
 
-export const selectGameState = createSelector(
-    selectActiveGameState,
-    state => state.gameStatus
-)
+// export const selectTrumpSuit = createSelector(
+//     selectActiveGameState,
+//     state => state.handData.trumpSuit
+// )
+
+// export const selectGameState = createSelector(
+//     selectActiveGameState,
+//     state => state.gameStatus
+// )

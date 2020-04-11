@@ -1,8 +1,21 @@
 import { Component, OnInit } from "@angular/core";
 import { of, Observable } from "rxjs";
 import { Store, select } from "@ngrx/store";
-import { selectCurrentDealer, selectIsCurrentPlayerActive, selectGameState } from "src/app/state/selectors";
-import { tap, map } from "rxjs/operators";
+import { tap, map, withLatestFrom } from "rxjs/operators";
+import { selectCurrentDealer, selectGameStatus, isUserActivePlayer, selectPlayersHands } from 'src/app/state/database-state/database-state.selectors';
+import { selectPlayerKey } from 'src/app/state/client-state/client-state.selectors';
+import { Card } from 'src/app/shared/models/card';
+import { PlayerDisplayFacadeService } from './player-display-facade.service';
+import { selectHandForOrientation, selectNameForOrientation, selectActiveCardForOrientation } from 'src/app/state/derived-selectors';
+
+
+function undefinedToString(obs: Observable<string | undefined>) {
+  return obs.pipe(
+    map(
+      value => !!value ? value : ''
+    )
+  );
+}
 
 @Component({
   selector: "app-game-display",
@@ -11,21 +24,25 @@ import { tap, map } from "rxjs/operators";
 })
 export class GameDisplayComponent {
   dealer = this._store.pipe(select(selectCurrentDealer));
-  gameStatus = this._store.pipe(select(selectGameState));
+  gameStatus = this._store.pipe(select(selectGameStatus));
+  cardsInHands = this._store.pipe(select(selectPlayersHands));
 
-  cards = of([
-    { value: "9", suit: "clubs" },
-    { value: "jack", suit: "hearts" },
-    { value: "10", suit: "spades" },
-    { value: "king", suit: "hearts" },
-    { value: "queen", suit: "diamonds" },
-  ]);
+  southCards = this._store.pipe(select(selectHandForOrientation('south')));
+  northCards = this._store.pipe(select(selectHandForOrientation('north')));
+  eastCards = this._store.pipe(select(selectHandForOrientation('east')));
+  westCards = this._store.pipe(select(selectHandForOrientation('west')));
 
-  isCurrentPlayersTurn = this._store.pipe(
-    select(selectIsCurrentPlayerActive)
-  );
+  southName = this._store.pipe(select(selectNameForOrientation('south')), undefinedToString);
+  northName = this._store.pipe(select(selectNameForOrientation('north')), undefinedToString);
+  eastName = this._store.pipe(select(selectNameForOrientation('east')), undefinedToString);
+  westName = this._store.pipe(select(selectNameForOrientation('west')), undefinedToString);
 
-  constructor(private _store: Store<any>) {}
+  // isCurrentPlayersTurn = this._store.pipe(
+  //   select(isUserActivePlayer)
+  // );
+  isCurrentPlayersTurn = of(true);
+
+  constructor(private _store: Store<any>, displayFacadeService: PlayerDisplayFacadeService) {}
 
   isPlayerDealer(player: string) {
     return this.dealer.pipe(
@@ -44,11 +61,11 @@ export class GameDisplayComponent {
       })
     );
   }
-  
+
   get isGameStateChoosingTrump(): Observable<boolean> {
     return this.gameStatus.pipe(
-      map(gameStatus => 
-        gameStatus === 'player discarding'
+      map(gameStatus =>
+        gameStatus === 'choosing trump'
       )
     );
   }
@@ -56,8 +73,19 @@ export class GameDisplayComponent {
   get isGameStatePlaying(): Observable<boolean> {
     return this.gameStatus.pipe(
       map(gameStatus => 
-        gameStatus === 'player playing'
+        gameStatus === 'playing hand'
       )
+    );
+  }
+
+  get cardsForUser(): Observable<Card[]> {
+    return this.cardsInHands.pipe(
+      withLatestFrom(
+        this._store.pipe(select(selectPlayerKey))
+      ),
+      map(([hands, playerKey]) => {
+        return hands[playerKey];
+      })
     );
   }
 }
