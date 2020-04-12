@@ -37,10 +37,9 @@ export class GameDisplayComponent {
   eastName = this._store.pipe(select(selectNameForOrientation('east')), undefinedToString);
   westName = this._store.pipe(select(selectNameForOrientation('west')), undefinedToString);
 
-  // isCurrentPlayersTurn = this._store.pipe(
-  //   select(isUserActivePlayer)
-  // );
-  isCurrentPlayersTurn = of(true);
+  isCurrentPlayersTurn = this._store.pipe(
+    select(isUserActivePlayer)
+  );
 
   constructor(private _store: Store<any>, displayFacadeService: PlayerDisplayFacadeService) {}
 
@@ -62,10 +61,10 @@ export class GameDisplayComponent {
     );
   }
 
-  get isGameStateChoosingTrump(): Observable<boolean> {
+  get isGameStatusAcceptingTrump(): Observable<boolean> {
     return this.gameStatus.pipe(
       map(gameStatus =>
-        gameStatus === 'choosing trump'
+        gameStatus === 'accepting trump'
       )
     );
   }

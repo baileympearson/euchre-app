@@ -1,11 +1,12 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { MatDialogRef } from '@angular/material/dialog';
-import { map } from 'rxjs/operators';
+import { map, tap, toArray } from 'rxjs/operators';
 import { trumpSuitPassed, trumpSuitAccepted } from 'src/app/state/actions';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { selectTopOfKitty, selectCurrentDealer } from 'src/app/state/database-state/database-state.selectors';
+import { Card } from 'src/app/shared/models/card';
 
 @Component({
   selector: 'app-accept-trump-dialog',
@@ -13,7 +14,9 @@ import { selectTopOfKitty, selectCurrentDealer } from 'src/app/state/database-st
   styleUrls: ['./accept-trump-dialog.component.css'],
 })
 export class AcceptTrumpDialogComponent {
-  kitty = this._store.pipe(select(selectTopOfKitty));
+  kitty = this._store.pipe(select(selectTopOfKitty), map(
+    (kitty: Card) => `assets/cards/${kitty.value}_of_${kitty.suit}.png`
+  ));
   dealer = this._store.pipe(select(selectCurrentDealer));
   trumpSuit = this._store.pipe(
     select(selectTopOfKitty),

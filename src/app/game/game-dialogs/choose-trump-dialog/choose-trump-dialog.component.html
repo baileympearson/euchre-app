@@ -1,5 +1,9 @@
 <h1 mat-dialog-title>
-  Would you like to choose the trump suit?
+  {{
+    (isDealerScrewed | async)
+      ? "Looks like you were screwed.  You must choose trump now: "
+      : "Would you like to choose the trump suit?"
+  }}
 </h1>
 <div mat-dialog-content class="dialog-body-content">
   <div class="display-suits">
@@ -9,10 +13,10 @@
       class="icon"
       (click)="onClickChooseTrump(suit)"
     ></mat-icon>
-    
   </div>
 
   <button
+    *ngIf="!(isDealerScrewed | async)"
     mat-button
     (click)="onClickPassTrump()"
     color="secondary"

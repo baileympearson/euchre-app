@@ -18,7 +18,7 @@
 .suits-svgs-containter {
     justify-content: center;
     align-items: center;
-    padding: 8px;
+    padding: 16px;
 }
 
 .icon {
@@ -32,6 +32,6 @@
 }
 
 .selected-trump-suit {
-    border: 1px solid lightgrey;
+    border: 1px solid grey;
     border-radius: 8px;
 }

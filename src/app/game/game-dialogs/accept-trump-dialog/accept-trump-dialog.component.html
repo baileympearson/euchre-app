@@ -6,7 +6,10 @@
   <div class="title">
     {{ dealer | async | titlecase }} (as dealer) Will Pick Up
   </div>
-  <app-hand-view-container [cards]="kitty"> </app-hand-view-container>
+  <!-- <app-hand-view-container [cards]="kitty"> </app-hand-view-container> -->
+  <div class="card-container">
+    <img src="{{ kitty | async }}" class="card-img">
+  </div>
 
   <div mat-dialog-actions align="end">
     <button

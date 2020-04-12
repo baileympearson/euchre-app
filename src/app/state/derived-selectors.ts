@@ -6,6 +6,10 @@ import {
   selectCardsInPlay,
   selectPlayers,
   selectCurrentDealer,
+  selectScores,
+  selectTeamPlayers,
+  selectCurrentActivePlayer,
+  isUserActivePlayer,
 } from './database-state/database-state.selectors';
 import { GameStatus } from '../shared/models/game-status';
 import { selectPlayerKey } from './client-state/client-state.selectors';
@@ -90,3 +94,37 @@ export const selectDealerOrientation = createSelector(
     }
 );
 
+export const isUserDealer = createSelector(
+  selectPlayerKey,
+  selectCurrentDealer,
+  (userKey, currentDealer) => userKey === currentDealer
+);
+
+export const isOnWinningTeam = createSelector(
+  selectScores,
+  selectPlayerKey,
+  selectTeamPlayers,
+  ({ gameScore }, playerKey, { teamA}) => {
+    const winningTeam = gameScore.teamA === 10 ? 'teamA' : 'teamB';
+    return teamA.player1 === playerKey || teamA.player2 === playerKey ? true : false;
+  }
+);
+
+export const selectGameMessage = createSelector(
+  selectGameStatus,
+  isUserActivePlayer,
+  selectCurrentActivePlayer,
+  selectPlayers,
+  (gameStatus: GameStatus, isUserActive: boolean, currentActivePlayer: PlayerKey, players) => {
+    if (gameStatus !== 'playing hand') {
+      return '';
+    } else {
+      if (isUserActive) {
+        return 'Select a card to play';
+      } else {
+        const activePlayer = players[currentActivePlayer];
+        return `${activePlayer} is playing...`;
+      }
+    }
+  }
+);

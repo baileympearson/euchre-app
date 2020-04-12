@@ -11,7 +11,7 @@ export interface ClientState {
 }
 
 export const initialState: ClientState = {
-  player: '',
+  player: 'bailey',
   playerKey: 'player1',
   invalidPlayErrorMessage: undefined,
   elevateHand: false,

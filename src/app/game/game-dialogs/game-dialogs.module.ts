@@ -15,6 +15,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ChooseTrumpDialogComponent } from './choose-trump-dialog/choose-trump-dialog.component';
 import { FormsModule } from '@angular/forms';
+import { GameOverDialogComponent } from './game-over-dialog/game-over-dialog.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { FormsModule } from '@angular/forms';
     WaitingForPlayersDialogComponent,
     JoinGameDialogComponent,
     ChooseTrumpDialogComponent,
+    GameOverDialogComponent,
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,29 @@
+<h1 mat-dialog-title>
+  {{
+    (isOnWinningTeam | async)
+      ? "You won!"
+      : "You lost lol"
+  }}
+</h1>
+<div mat-dialog-content class="dialog-body-content">
+    <div>
+        Would you like to play again?
+    </div>
+
+   <div mat-dialog-actions align="end">
+    <button
+      mat-button
+      color="secondary"
+      class="button-text">
+      Nah
+    </button>
+    <button
+      mat-button
+      cdkFocusInitial
+      color="primary"
+      class="button-text">
+      Sure
+    </button>
+  </div>
+</div>
+

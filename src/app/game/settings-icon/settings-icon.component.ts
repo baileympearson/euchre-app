@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { GameDialogsService } from '../game-dialogs/game-dialog.service';
 import { Store } from '@ngrx/store';
-import { playerDealtCards } from 'src/app/state/actions';
+import { playerDealtCards, databaseUpdateState } from 'src/app/state/actions';
 
 @Component({
   selector: 'app-settings-icon',
@@ -14,6 +14,8 @@ export class SettingsIconComponent {
 
   launchSettingsDialog() {
     // this._gameDialogService.openWaitingForPlayersDialog();
-    this._store.dispatch(playerDealtCards());
+    this._store.dispatch(
+      databaseUpdateState
+      ());
   }
 }

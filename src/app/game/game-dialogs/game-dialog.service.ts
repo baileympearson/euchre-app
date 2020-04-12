@@ -6,6 +6,7 @@ import { CutDeckDialogComponent } from './cut-deck-dialog/cut-deck-dialog.compon
 import { WaitingForPlayersDialogComponent } from './waiting-for-players-dialog/waiting-for-players-dialog.component';
 import { JoinGameDialogComponent } from './join-game-dialog/join-game-dialog.component';
 import { ChooseTrumpDialogComponent } from './choose-trump-dialog/choose-trump-dialog.component';
+import { GameOverDialogComponent } from './game-over-dialog/game-over-dialog.component';
 
 @Injectable({
   providedIn: 'root',
@@ -41,6 +42,12 @@ export class GameDialogsService {
   
   openChooseTrumpDialog(): MatDialogRef<ChooseTrumpDialogComponent> {
     return this._matDialog.open(ChooseTrumpDialogComponent, {
+      disableClose: true,
+    });
+  }
+
+  openGameOverDialog(): MatDialogRef<GameOverDialogComponent> {
+    return this._matDialog.open(GameOverDialogComponent, {
       disableClose: true,
     });
   }

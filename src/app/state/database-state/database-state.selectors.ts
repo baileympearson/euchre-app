@@ -1,7 +1,8 @@
 import { createSelector } from '@ngrx/store';
 import { selectDBState, selectClientState } from '../selectors';
 import { DBState } from './database-state.reducers';
-import { selectUser } from '../client-state/client-state.selectors';
+import { selectUser, selectPlayerKey } from '../client-state/client-state.selectors';
+import { PlayerKey } from 'src/app/shared/models/player-key';
 
 export const selectGameName = createSelector(
   selectDBState,
@@ -74,9 +75,9 @@ export const selectTeamPlayers = createSelector(
 );
 
 export const isUserActivePlayer = createSelector(
-  selectUser,
+  selectPlayerKey,
   selectCurrentActivePlayer,
-  (user: string, currentActivePlayer: string) => {
+  (user: PlayerKey, currentActivePlayer: PlayerKey) => {
     return (
       user.length > 0 &&
       currentActivePlayer.length > 0 &&

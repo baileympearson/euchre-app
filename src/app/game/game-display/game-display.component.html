@@ -8,13 +8,13 @@
     </div>
     <div class="flex-row">
       <span class="player-name">
-          {{ northName | async | titlecase }}
+        {{ northName | async | titlecase }}
       </span>
     </div>
   </div>
 
   <div class="game-center-row">
-    <div class="spacer"> </div>
+    <div class="spacer"></div>
     <div class="fixed-width">
       <app-vertical-hand-view-container
         [cards]="westCards"
@@ -23,16 +23,19 @@
       >
       </app-vertical-hand-view-container>
       <span class="player-name">
-          {{ westName | async | titlecase }}
+        {{ westName | async | titlecase }}
       </span>
     </div>
 
-    <app-kitty class="content-center" *ngIf="isGameStateChoosingTrump | async"></app-kitty>
+    <app-kitty
+      class="content-center"
+      *ngIf="isGameStatusAcceptingTrump | async"
+    ></app-kitty>
     <app-cards-in-play *ngIf="isGameStatePlaying | async"></app-cards-in-play>
 
     <div class="fixed-width">
       <span class="player-name">
-          {{ eastName | async | titlecase }}
+        {{ eastName | async | titlecase }}
       </span>
       <app-vertical-hand-view-container
         [cards]="eastCards"
@@ -41,7 +44,7 @@
       >
       </app-vertical-hand-view-container>
     </div>
-    <div class="spacer"> </div>
+    <div class="spacer"></div>
   </div>
 
   <div class="center-cards">
@@ -52,7 +55,9 @@
         </span>
       </div>
       <div class="game-hand-viewer">
-        <app-select-card *ngIf="isCurrentPlayersTurn | async" [cards]="southCards"
+        <app-select-card
+          *ngIf="isCurrentPlayersTurn | async"
+          [cards]="southCards"
           class="game-hand-viewer"
         >
         </app-select-card>
